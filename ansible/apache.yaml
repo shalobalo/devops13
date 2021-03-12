@@ -1,4 +1,4 @@
-- hosts: "all,web_server"
+- hosts: "all"
   gather_facts: true
   vars:
     apache: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
