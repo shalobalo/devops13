@@ -2,7 +2,7 @@
   gather_facts: true
   vars:
     apache: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
-    content: "Hello, World!"
+    content: "Hello, World, Again!"
   become: true
   tasks:
     - debug: var=apache
