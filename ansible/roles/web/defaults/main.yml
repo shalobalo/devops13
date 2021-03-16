@@ -1,0 +1,4 @@
+---
+# defaults file for web
+apache: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
+content: "Hello, World!"

@@ -1,0 +1,18 @@
+---
+# tasks file for common
+- package:
+    name:
+      - mc
+      - telnet
+      - nano
+      - facter
+
+- package:
+    name:
+      - ruby-json
+  when: ansible_os_family == 'Debian'
+
+- name: Collect only facts returned by facter
+  ansible.builtin.setup:
+    gather_subset:
+      - facter

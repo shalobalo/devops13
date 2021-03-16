@@ -1,0 +1,15 @@
+  - package: 
+      name:
+       - software-properties-common
+       - dirmngr
+
+  - name: Add an Apt signing key, will not download if present
+    apt_key:
+      url: https://mariadb.org/mariadb_release_signing_key.asc
+      state: present
+
+  - apt_repository:
+     repo: 'deb [arch=amd64,arm64,i386,ppc64el] https://mirror.rackspace.com/mariadb/repo/10.5/debian stretch main'
+     state: present
+
+  - package: name="mariadb-server"
